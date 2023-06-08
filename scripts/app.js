@@ -11,10 +11,7 @@ fetchButton.addEventListener('click', () => {
     fetch(url)
           .then(response => response.json())
           .then(data => {
-            resultDiv.innerHTML = "User ID: " + data.id + "<br>" +
-                                    "ID: " + data.id + "<br>" +
-                                   "Title: " + data.title + "<br>" +
-                                   "Completed: " + data.completed;
+            resultDiv.innerHTML = JSON.stringify(data, null, 2);
           })
           .catch(error => {
             console.error(error);
